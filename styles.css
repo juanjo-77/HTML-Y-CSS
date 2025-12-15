@@ -1,114 +1,188 @@
-/* ===== General ===== */
+/* General */
+html { font-size: 16px; } /* Tamaño base - 1rem = 16px */
 body {
   background: #041a6f9e;
   font-family: 'Orbitron', sans-serif;
   color: #000;
   margin: 0;
-  padding: 20px;
+  padding: 1.25rem;
   text-align: center;
+  font-size: 1rem;
+  line-height: 1.6; /* Espacio entre líneas de texto para mejor legibilidad */
 }
-
-/* ===== Header y navegación ===== */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
+/* Header */
+header { 
+  display: flex; /* Convierte en contenedor flexible */
+  justify-content: space-between; /* Separa elementos a los extremos */
+  align-items: center; /* Centra verticalmente los elementos */
+  padding: 0.625rem 1.25rem;
   background: #0b308e5b;
   color: white;
 }
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
 nav ul {
-  display: flex;
-  list-style: none;
-  gap: 15px;
+  display: flex; /* Menú horizontal */
+  list-style: none; /* Quita los puntos de la lista */
+  gap: 0.938rem; /* Espacio entre elementos del menú */
   margin: 0;
   padding: 0;
 }
 nav ul li a {
   color: white;
-  text-decoration: none;
+  text-decoration: none; /* Quita el subrayado de los enlaces */
   font-weight: bold;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem; /* Arriba/abajo Izquierda/derecha */
+  display: block; /* Hace que el padding funcione correctamente */
 }
-
-/* ===== Secciones y títulos ===== */
-section h2 { color: #e1280f; margin-bottom: 15px; }
-
-/* ===== Proyectos Grid ===== */
+/* Títulos */
+section h2 {
+  color: #c52915a6;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+/* Proyectos */
 #proyectos ul {
-  display: grid;     /* ===== Convierte un contenedor en un sistema de cuadrícula. ===== */
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));    /* ===== Define cuántas columnas tendrá la cuadrícula. ===== */
-  gap: 20px;         /* ===== Define el espacio entre filas y columnas. ===== */
+  display: grid; /* Sistema de cuadrícula */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+  gap: 1.25rem; /* Espacio entre columnas y filas */
   padding: 0;
   list-style: none;
+  margin: 0;
 }
-
 #proyectos ul li {
   background: #0b308e5b;
-  padding: 15px;
-  border-radius: 6px;
-  transition:
-   transform 0.3s;
+  padding: 1.5rem;
+  border-radius: 0.375rem;
+  transition: transform 0.3s; /* Animación suave al hacer hover */
 }
-#proyectos ul li:hover { 
-  transform: scale(1.05); 
+#proyectos ul li:hover {
+  transform: scale(1.05); /* Aumenta tamaño al pasar el mouse */
 }
-
-
-#proyectos ul li a {
-   color: #f4f4f4; font-weight: bold; text-decoration: none; 
+/* Formulario */
+form {
+  max-width: 600px; /* Limita el ancho máximo */
+  margin: 0 auto; /* Centra el formulario */
+  padding: 0 1rem;
 }
-
-
-/* ===== Formulario ===== */
-form input, form button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}/* =====  ===== */
-
+form input, form button { width: 100%; padding: 0.75rem; margin-top: 0.625rem; border-radius: 0.375rem; border: 1px solid #ccc; font-size: 1rem; box-sizing: border-box; } /* box-sizing: incluye padding y border en el width */
 form button {
   background: #007acc;
   color: white;
   border: none;
-  cursor: pointer;
+  cursor: pointer; /* Cambia el cursor a manita */
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 0.938rem;
 }
-
-form button:hover { background: #005f99; }
-
-/* ===== Enlaces generales ===== */
-a { color: #fff; text-shadow: 0 0 10px #00eaff; text-decoration: none; }
-a:hover { color: #00eaff; text-decoration: underline; }
-
-/* ===== Galería de mascotas con Flexbox ===== */
+form button:hover {
+  background: #005f99; /* Color más oscuro al pasar el mouse */
+}
+/* Enlaces */
+a {
+  color: #fff;
+  text-shadow: 0 0 0.625rem #00eaff; /* Sombra brillante alrededor del texto */
+  text-decoration: none;
+  font-size: 1rem;
+}
+a:hover {
+  color: #00eaff;
+  text-decoration: underline;
+}
+/* Imágenes */
+img {
+  max-width: 100%; /* Nunca más ancho que su contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Elimina espacio extra debajo de la imagen */
+}
+/* Galería */
 .galeria {
-  display: flex;
-  flex-wrap: wrap;   /* ===== se adapta al tamaño de la pantalla ===== */
-  gap: 20px;
-  justify-content: center; /* ===== Controla cómo se distribuyen horizontalmente los elementos. ===== */
-  padding: 20px;
+  display: flex; /* Contenedor flexible */
+  flex-wrap: wrap; /* Permite que los elementos bajen a la siguiente línea */
+  gap: 1.25rem;
+  justify-content: center; /* Centra horizontalmente */
+  padding: 1.25rem;
 }
-
 .galeria article {
   background: #f9f9f9;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 1rem;
+  border-radius: 0.5rem;
   width: 220px;
   text-align: center;
   transition: transform 0.3s;
 }
-
 .galeria article:hover {
-  transform: scale(1.06);
+  transform: scale(1.06); /* Agranda al pasar el mouse */
 }
-
 .galeria img {
   width: 100%;
   height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
+  object-fit: cover; /* Recorta la imagen para llenar el espacio manteniendo proporción */
+  border-radius: 0.5rem;
+}
+
+/* ---------------------------------------------------------------- */
+/* Media Queries - Adapta el diseño según el tamaño de pantalla */
+/* ---------------------------------------------------------------- */
+
+@media (max-width: 767px) { /* Móviles */
+  html { font-size: 14px; } /* Reduce el tamaño base */
+  header {
+    flex-direction: column; /* Cambia a vertical */
+    gap: 1rem;
+  }
+  header h1 { font-size: 1.75rem; }
+  section h2 { font-size: 2rem; }
+  nav ul {
+    flex-direction: column; /* Menú vertical en móviles */
+    align-items: center;
+    gap: 0.625rem;
+  }
+  nav ul li { width: 100%; }
+  nav ul li a { text-align: center; }
+  #proyectos ul {
+    grid-template-columns: 1fr; /* 1 sola columna en móviles */
+    gap: 1rem;
+  }
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+  .galeria img { height: 120px; }
+}
+@media (min-width: 768px) and (max-width: 1024px) { /* Tablets */
+  html { 
+    font-size: 15px; 
+  }
+
+  header h1 { 
+    font-size: 1.875rem; 
+  }
+
+  section h2 { 
+    font-size: 2.25rem; 
+  }
+
+  #proyectos ul {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    gap: 1.125rem;
+  }
+
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
+    gap: 1.125rem;
+  }
+  .galeria img { height: 140px; }
+}
+@media (min-width: 1025px) { /* Escritorio */
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
+  }
+  .galeria img { height: 160px; }
 }
